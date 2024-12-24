@@ -1,0 +1,10 @@
+*.tfstate
+*.tfstate.*
+*.tfstate.lock.*
+*.terraform.lock.*
+**.terraform/*
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+crash.*.log
