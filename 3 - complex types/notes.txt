@@ -1,0 +1,50 @@
+PS C:\Users\prasa\OneDrive\Desktop\DevOps\Terraform\Terrraform lab\Learn_Terraform\3 - complex types> terraform console
+> var.plans["Premium"]
+100
+> var.planets[3]
+"Mars"
+> exit
+PS C:\Users\prasa\OneDrive\Desktop\DevOps\Terraform\Terrraform lab\Learn_Terraform\3 - complex types> terraform console
+> var.person["name"]
+"John Doe"
+> var.person
+{
+  "age" = 25
+  "is_student" = true
+  "name" = "John Doe"
+}
+> var.plans
+tomap({
+  "Basic" = 25
+  "Premium" = 100
+  "Standard" = 50
+})
+> var.planets
+tolist([
+  "Mercury",
+  "Venus",
+  "Earth",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+])
+> [for planet in var.planets: upper(planet)]
+[
+  "MERCURY",
+  "VENUS",
+  "EARTH",
+  "MARS",
+  "JUPITER",
+  "SATURN",
+  "URANUS",
+  "NEPTUNE",
+]
+
+> var.random
+[
+  "Hello",
+  42,
+  false,
+]

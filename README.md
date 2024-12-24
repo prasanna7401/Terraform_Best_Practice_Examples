@@ -5,6 +5,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
 1. Variables and operations: `for_each`, `splat` & basics
 2. Terraform expressions: `dynamic` block, `data` source, `terraform import`.
+3. Complex types - Collections (`list`, `set`, `map`) and Structural (`object`, `tuple`)
 
 # Useful items:
 
