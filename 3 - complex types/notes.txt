@@ -5,8 +5,10 @@ PS C:\Users\prasa\OneDrive\Desktop\DevOps\Terraform\Terrraform lab\Learn_Terrafo
 "Mars"
 > exit
 PS C:\Users\prasa\OneDrive\Desktop\DevOps\Terraform\Terrraform lab\Learn_Terraform\3 - complex types> terraform console
+
 > var.person["name"]
 "John Doe"
+
 > var.person
 {
   "age" = 25
