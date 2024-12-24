@@ -11,7 +11,6 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 1. **STATE:** You can always find the `tfstate.backup` file containing the previous terraform apply results.
 2. **FIND Resource Attributes**: Use `terraform state show <resource_name>` to show all available outputs of a created resource.
 3. **IMPORT Real-world resources**:
-  
   _3.1. How to import a resource configuration for managing via terraform_
    - Step-1: Create an empty resource block in the terraform file 
     ```hcl
