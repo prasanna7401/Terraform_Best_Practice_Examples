@@ -2,7 +2,7 @@
 *.tfstate.*
 *.tfstate.lock.*
 *.terraform.lock.*
-**.terraform/*
+.terraform/
 override.tf
 override.tf.json
 *_override.tf
