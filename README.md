@@ -8,9 +8,10 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
 # Useful items:
 
-1. You can always find the `tfstate.backup` file containing the previous terraform apply results.
-2. Use `terraform state show <resource_name>` to show all available outputs of a created resource.
-3. How to import a resource configuration for managing via terraform - VERY useful!
+1. **STATE:** You can always find the `tfstate.backup` file containing the previous terraform apply results.
+2. **FIND Resource Attributes**: Use `terraform state show <resource_name>` to show all available outputs of a created resource.
+3. **IMPORT Real-world resources**:
+   1. How to import a resource configuration for managing via terraform - VERY useful!
    - Step-1: Create an empty resource block in the terraform file 
     ```hcl
         resource "aws_security_group" "to_be_imported" {
