@@ -23,14 +23,14 @@ Contains terraform scripts used for learning the Terraform Associate exam.
     - Step-3: After the configurations get imported into your state file, run `terraform show` or `terraform state show <resource_type>.<resource_name>`
     - Step-4: Clean up the output-only attributes like `id`, `arn`, `timestamp`, etc. and add the code block the terraform configuration file.
 4. Use `object` structural type to enfore schema to the variable. For example: 
-  ```hcl
-  variable <name> {
-    type = object({
-        name = string
-        age = number
-        })
-    default = {
-        ...
-    }
+   ```hcl
+   variable <name> {
+     type = object({
+         name = string
+         age = number
+         })
+     default = {
+         ...
+     }
   }
-  ```
+   ```
