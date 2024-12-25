@@ -7,7 +7,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 2. Terraform expressions: `dynamic` block, `data` source, `terraform import`.
 3. Complex types - Collections (`list`, `set`, `map`) and Structural (`object`, `tuple`)
 
-# Useful items:
+## Useful items:
 
 1. **STATE:** You can always find the `tfstate.backup` file containing the previous terraform apply results.
 2. **FIND Resource Attributes**: Use `terraform state show <resource_name>` to show all available outputs of a created resource.
@@ -22,7 +22,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
     - Step-2: Run `terraform import <resource_type>.<resource_name> <resource_id>` (For example, aws_security_group sg-12345)
     - Step-3: After the configurations get imported into your state file, run `terraform show` or `terraform state show <resource_type>.<resource_name>`
     - Step-4: Clean up the output-only attributes like `id`, `arn`, `timestamp`, etc. and add the code block the terraform configuration file.
-4. Use `object` structural type to enfore schema to the variable. For example: 
+4. **Schematize/Validate Input:** Use `object` structural type to enfore schema to the variable. For example: 
    ```hcl
    variable <name> {
      type = object({
