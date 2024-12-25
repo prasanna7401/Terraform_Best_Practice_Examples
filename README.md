@@ -5,6 +5,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
 1. Variables and operations: `for_each`, `splat` & basics
 2. Terraform expressions: `dynamic` block, `data` source, `terraform import`.
+3. Complex types - Collections (`list`, `set`, `map`) and Structural (`object`, `tuple`)
 
 # Useful items:
 
@@ -21,4 +22,15 @@ Contains terraform scripts used for learning the Terraform Associate exam.
     - Step-2: Run `terraform import <resource_type>.<resource_name> <resource_id>` (For example, aws_security_group sg-12345)
     - Step-3: After the configurations get imported into your state file, run `terraform show` or `terraform state show <resource_type>.<resource_name>`
     - Step-4: Clean up the output-only attributes like `id`, `arn`, `timestamp`, etc. and add the code block the terraform configuration file.
-4. 
+4. Use `object` structural type to enfore schema to the variable. For example: 
+   ```hcl
+   variable <name> {
+     type = object({
+         name = string
+         age = number
+         })
+     default = {
+         ...
+     }
+  }
+   ```
