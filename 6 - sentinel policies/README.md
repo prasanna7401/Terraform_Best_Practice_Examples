@@ -1,3 +1,7 @@
+This set up needs an upgraded plan to perform (teams or organization plan)
+
+USEFUL LINK: https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/policy-quickstart
+
 You can either have the sentinel policy sets in your code base, or directly in your Terraform cloud workspace/ organization policy settings.
 
 - If you want to run using CLI, then form a CLI/API connection first.
