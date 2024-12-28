@@ -1,0 +1,8 @@
+Documentation: # label updates to any markdown file
+- changed-files:
+  - any-glob-to-any-file: '**/*.md' 
+
+code update: # label updates to any terraform configuration file
+- changed-files:
+  - any-glob-to-any-file: '**/*.tf'
+  - any-glob-to-any-file: '**/*.hcl' 
