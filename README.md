@@ -54,3 +54,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
      }
    }
    ```
+
+### Useful tools:
+
+1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases. 
