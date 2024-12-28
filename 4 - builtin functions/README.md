@@ -1,42 +1,66 @@
-> abspath(path.root)
+```hcl
+abspath(path.root)
+---
 "C:/Users/prasa/OneDrive/Desktop/DevOps/Terraform/Terrraform lab/Learn_Terraform/4 - builtin functions"
+```
 
-> chomp(var.some_value)
+```hcl
+chomp(var.some_value)
+---
 <<EOT
 Hello, World!
 
 EOT
+```
 
-
-> trimspace(var.some_value)
+```hcl
+trimspace(var.some_value)
+---
 "Hello, World!"
+```
 
-> split(" ",trimspace(var.some_value))
+```hcl
+split(" ",trimspace(var.some_value))
+---
 tolist([
   "Hello,",
   "World!",
 ])
+```
 
-> bcrypt("Prasanna")
+```hcl
+bcrypt("Prasanna")
+---
 "$2a$10$0ntt/bHJpCywBrzfKwypwuTG6rI.7GASu7EURgrJ5PvrJQ7qAoMqG"
-> base64encode("Prasanna")
+```
+```hcl
+base64encode("Prasanna")
+---
 "UHJhc2FubmE="
+```
 
-
-> keys(var.students)
+```hcl
+keys(var.students)
+---
 tolist([
   "Alice",
   "Bob",
   "Charlie",
 ])
-> values(var.students)
+```
+```hcl
+values(var.students)
+---
 tolist([
   20,
   21,
   22,
 ])
+```
 
-> sort([54,234,678,234,67,23])
+```hcl
+sort([54,234,678,234,67,23])
+---
 tolist([
   "23",
   "234",
@@ -45,3 +69,4 @@ tolist([
   "67",
   "678",
 ])
+```
