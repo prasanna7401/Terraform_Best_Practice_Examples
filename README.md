@@ -64,8 +64,10 @@ Contains terraform scripts used for learning the Terraform Associate exam.
    ```
 
 6. Isolating environments (based on environments and resource lifecycle): An example for AWS Infrastructure is shown below
-<img align="center" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*L9BTyj0M9j7ANsXeyFOctw.png" width="400">
+<p  align="center">
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*L9BTyj0M9j7ANsXeyFOctw.png" width="400">
 <sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
+</p>
 
 ### Useful tools
 
