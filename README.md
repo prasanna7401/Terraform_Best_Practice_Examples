@@ -50,19 +50,30 @@ Contains terraform scripts used for learning the Terraform Associate exam.
         terraform state rm aws_instance.example
     ```
 
-5. **[Schematize/Validate Input variables:](https://developer.hashicorp.com/terraform/language/values/)** Use `object` structural type to enfore schema to the variable. For example: 
+5. **[Schematize/Validate Input variables:](https://developer.hashicorp.com/terraform/language/values/)** Use `validation` block
    ```hcl
-   variable <name> {
-     type = object({
-         name = string
-         age = number
-         })
-     default = {
-         ...
-     }
-   }
+        variable "public_ip" { 
+        description = "Public IP address for the service" 
+        type = string 
+        validation { 
+            condition = can(regex("^(([0-9]{1,3}\\.){3}[0-9]{1,3})$", var.public_ip)) && length(split(".", var.public_ip)) == 4 && alltrue([for octet in split(".", var.public_ip) : tonumber(octet) <= 255]) 
+            error_message = "The Public IP address must be in the format x.x.x.x where x is a number between 0 and 255." 
+            } 
+        }
+
    ```
 
-### Useful tools:
+6. **Isolating environments** (based on environments and resource lifecycle): An example for AWS Infrastructure is shown below
+<p  align="center">
+<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*L9BTyj0M9j7ANsXeyFOctw.png" width="400">
+</p>
 
-1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases. 
+- Here, repetitive codes are set up as _modules_ to avoid repetition of codes across environments.
+- Splitting components into separate folders avoids the risk of destroying your entire infrastructure with one command but complicates creating your entire infrastructure at once. With a single Terraform configuration, you can spin up everything with one terraform apply command. With components in separate folders, you must run terraform apply in each folder individually. The solution: use Terragrunt's `run-all` command to execute commands across multiple folders concurrently.
+- Breaking the code into multiple folders complicates using resource dependencies. If your app and database code were in the same Terraform configuration files, the app could directly access database attributes (e.g., `aws_db_instance.foo.address`). In separate folders, this direct access isn’t possible. The solution: use `dependency {}`blocks in Terragrunt.
+
+    <sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
+
+### Useful tools
+
+1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
