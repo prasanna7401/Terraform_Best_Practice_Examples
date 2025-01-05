@@ -63,6 +63,11 @@ Contains terraform scripts used for learning the Terraform Associate exam.
    }
    ```
 
-### Useful tools:
+6. Isolating environments (based on environments and resource lifecycle): An example for AWS Infrastructure is shown below
+![Isolation by file layout in Terraform](.github/screenshots/Isolation_file_layout_recommendation.jpg)
 
-1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases. 
+<sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
+
+### Useful tools
+
+1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
