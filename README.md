@@ -12,10 +12,10 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 7. [Packer](./7%20-%20packer/) - VM Image builder tool: can use config management tools like Shell, Ansible, Chef, etc. alongside. Also contains `lifecycle`, `terraform import` examples to build an apache http server
 8. Vault - Terraform Secret Server deployment process and usage in code.
 <details>
-    <summary>Labs - Click here</summary>
+<summary>Labs - Click here</summary>
 
-    - [Web server (Auto-scaling Group) deployment fronted by Application Load Balancer](./9%20-%20lab/1%20-%20web%20server%20asg%20with%20elb/)
-    - [Private EC2 Instance with a jump server and a NAT Gateway](./9%20-%20lab/2%20-%20ec2%20with%20jump%20server%20(nat%20gateway)/)
+- [Auto-scaling Web server deployment fronted by Application Load Balancer](./9%20-%20lab/1%20-%20web%20server%20asg%20with%20elb/)
+- [Private EC2 Instance with a jump server and a NAT Gateway](./9%20-%20lab/2%20-%20ec2%20with%20jump%20server%20(nat%20gateway)/)
 
 </details>
 
