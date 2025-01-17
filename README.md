@@ -21,12 +21,13 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
 ## Useful items:
 
-1. **State BACKUP:** You can always find the `tfstate.backup` file containing the previous terraform apply results.
+1. **State BACKUP**: 
+    - if stored locally, the `tfstate.backup` file contains the previous terraform apply results. 
+    - if storing in a remote backend, make sure to enable versioning to be able to roll back..
 
-2. **FIND Resource Attributes**: Use `terraform state show <resource_name>` to show all available outputs of a created resource.
 
-3. **[IMPORT Real-world resources](https://developer.hashicorp.com/terraform/language/import)**:
-  _3.1. How to import a resource configuration for managing via terraform_
+2. **[IMPORT Real-world resources](https://developer.hashicorp.com/terraform/language/import)**:
+  _2.1. How to import a resource configuration for managing via terraform_
    - Step-1: Create an empty resource block in the terraform file 
     ```hcl
         resource "aws_security_group" "to_be_imported" {
@@ -37,20 +38,22 @@ Contains terraform scripts used for learning the Terraform Associate exam.
     - Step-3: After the configurations get imported into your state file, run `terraform show` or `terraform state show <resource_type>.<resource_name>`
     - Step-4: Clean up the output-only attributes like `id`, `arn`, `timestamp`, etc. and add the code block the terraform configuration file.
 
-4. **Avoid Resource modification/deletion (useful for imported/critical resources)**:
-    - Option-1: Add a lifecycle block to your code:
-    ```hcl
-    lifecycle {
-        ignore_changes = [cidr_block] # or any specific resource config
-        prevent_destroy = true
-    }
-    ```
-    - Option-2: Manually remove the resource configuration from the state file.
-    ```sh
-        terraform state rm aws_instance.example
-    ```
+> Other options: For bulk import of resources, you can use tools like `terraformer` & `terracognita`
 
-5. **[Schematize/Validate Input variables:](https://developer.hashicorp.com/terraform/language/values/)** Use `validation` block
+3. **Avoid Resource modification/deletion (useful for imported/critical resources)**:
+    - Option-1: Add a lifecycle block to your code:
+        ```hcl
+        lifecycle {
+            ignore_changes = [cidr_block] # or any specific resource config
+            prevent_destroy = true
+        }
+        ```
+    - Option-2: Manually remove the resource configuration from the state file.
+        ```sh
+            terraform state rm aws_instance.example
+        ```
+
+4. **[Schematize/Validate Input variables:](https://developer.hashicorp.com/terraform/language/values/)** Use `validation` block
    ```hcl
         variable "public_ip" { 
         description = "Public IP address for the service" 
@@ -68,12 +71,21 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*L9BTyj0M9j7ANsXeyFOctw.png" width="400">
 </p>
 
-- Here, repetitive codes are set up as _modules_ to avoid repetition of codes across environments.
 - Splitting components into separate folders avoids the risk of destroying your entire infrastructure with one command but complicates creating your entire infrastructure at once. With a single Terraform configuration, you can spin up everything with one terraform apply command. With components in separate folders, you must run terraform apply in each folder individually. The solution: use Terragrunt's `run-all` command to execute commands across multiple folders concurrently.
 - Breaking the code into multiple folders complicates using resource dependencies. If your app and database code were in the same Terraform configuration files, the app could directly access database attributes (e.g., `aws_db_instance.foo.address`). In separate folders, this direct access isn’t possible. The solution: use `dependency {}`blocks in Terragrunt.
 
     <sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
 
+7. **Module versioning**: If the modules are stored in a version control system, you can make use of specific versions of your code. In this scenario, it is recommended to use a separate git repository for modules. This is very helpful when you want to test the changes to your module in your test environmen without affecting the production environment. A sample code is as follows,
+    ```hcl
+        module "some_resource" {
+            source = "github.com/<owner_name>/<repo_name>//security/firewall?ref=v0.0.1" # Double slash after the git URL is important
+            # rest of the code...
+        }
+
 ### Useful tools
 
 1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
+2. Terrascan
+3. Terratest
+4. Terraformer & Terracognita - To handle bulk import of existing resource configuration
