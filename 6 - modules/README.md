@@ -1,0 +1,1 @@
+To easen the work, by avoiding repeated provider and backend configurations, use **terragrunt**. This tool is also helpful in avoiding the burden of running the `init` and `apply` commands at each directory path.
