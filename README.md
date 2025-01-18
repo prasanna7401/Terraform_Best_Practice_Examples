@@ -3,10 +3,8 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
 ## Topics:
 
-1. [Variables and operations](https://developer.hashicorp.com/terraform/language/values): `for_each`, `splat` & basics
-2. [Expressions](https://developer.hashicorp.com/terraform/language/expressions): `dynamic` block, `data` source, `terraform import`.
-3. Complex types - Collections (`list`, `set`, `map`) and Structural (`object`, `tuple`)
-4. [Built-in functions](https://developer.hashicorp.com/terraform/language/functions/): Numeric, String, Collection(list, tuple, set, map), Encoding/decoding, Filesystem, Datetime, IP network, Hash, and Type conversion functions.
+
+
 5. Terraform Cloud - Features and test config run screenshots. Contains `backend` code blocks
 6. [Sentinel](./6%20-%20sentinel%20policies/) - Policy as a code (ex. enfore tagging resources, restrict public storage accounts, etc.)
 7. [Packer](./7%20-%20packer/) - VM Image builder tool: can use config management tools like Shell, Ansible, Chef, etc. alongside. Also contains `lifecycle`, `terraform import` examples to build an apache http server
