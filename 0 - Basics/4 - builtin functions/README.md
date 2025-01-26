@@ -70,3 +70,9 @@ tolist([
   "678",
 ])
 ```
+
+## More
+
+- jsondecode
+- templatefile
+- urlencode
