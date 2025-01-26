@@ -74,7 +74,18 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
     <sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
 
-7. 
+7. **Enforce Default Tags**: You can set up default tags during the provider configuration.
+    ```hcl
+    provider "aws" {
+        region = "something"
+        default_tags {
+            tags = {
+                deployment = "terraform"
+            }
+        }
+    }
+    ```
+
 
 ### Useful tools
 
