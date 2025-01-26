@@ -82,7 +82,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
     ```sh
     terraform state mv <OLD_BLOCK_REFEERENCE> <NEW_REFERENCE>
     ```
-    2. Use moved block:
+    2. Use `moved` block:
     ```hcl
     moved {
         from = aws_instance.something
