@@ -1,4 +1,4 @@
-## Lifecycle block:
+## Lifecycle block
 
 ```hcl
 lifecycle {
@@ -9,7 +9,13 @@ lifecycle {
 }
 ```
 
-## Loops - Basics:
+## Deployment Strategies
+
+- AWS Auto-scaling Group: `instance_refresh` block
+- AWS Elastic Container Service: `deployment_maximum_percent` and `deployment_minimum_healthy_percent`
+- Kubernetes: `strategy` parameter and `rolling_update` block.
+
+## Loops - Refresh
 - **count**
     - Use to loop over an entire resource and modules with same lifecycle and attributes.
     ```hcl

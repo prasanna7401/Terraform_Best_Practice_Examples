@@ -2,6 +2,12 @@ terraform {
   
 }
 
+# Random number
+resource "random_integer" "something" {
+  min = 1
+  max = 100
+}
+
 # Collection Types
 
 # LIST

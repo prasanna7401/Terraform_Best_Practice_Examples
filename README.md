@@ -19,12 +19,12 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
 ## Useful items:
 
-1. **State BACKUP**: 
+1. **Statefile Backup**: 
     - If stored _**locally**_, the `tfstate.backup` file contains the previous terraform apply results. 
     - if storing in a _**remote backend**_, make sure to enable versioning to be able to roll back..
 
 
-2. **[IMPORT Real-world resources](https://developer.hashicorp.com/terraform/language/import)**:
+2. **[Import Real-world resources](https://developer.hashicorp.com/terraform/language/import)**:
   _2.1. How to import a resource configuration for managing via terraform_
    - Step-1: Create an empty resource block in the terraform file 
     ```hcl
@@ -64,17 +64,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
    ```
 
-6. **Isolating environments** (based on environments and resource lifecycle): An example for AWS Infrastructure is shown below
-<p  align="center">
-<img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*L9BTyj0M9j7ANsXeyFOctw.png" width="400">
-</p>
-
-- Splitting components into separate folders avoids the risk of destroying your entire infrastructure with one command but complicates creating your entire infrastructure at once. With a single Terraform configuration, you can spin up everything with one terraform apply command. With components in separate folders, you must run terraform apply in each folder individually. The solution: use Terragrunt's `run-all` command to execute commands across multiple folders concurrently.
-- Breaking the code into multiple folders complicates using resource dependencies. If your app and database code were in the same Terraform configuration files, the app could directly access database attributes (e.g., `aws_db_instance.foo.address`). In separate folders, this direct access isn’t possible. The solution: use `dependency {}`blocks in Terragrunt.
-
-    <sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
-
-7. **Enforce Default Tags**: You can set up default tags during the provider configuration.
+5. **Enforce Default Tags**: You can set up default tags during the provider configuration.
     ```hcl
     provider "aws" {
         region = "something"
@@ -86,8 +76,21 @@ Contains terraform scripts used for learning the Terraform Associate exam.
     }
     ```
 
+6. Instructions before refactoring existing code:
+    - Modifying the names of the existing resource/module block may trigger changes causing downtime. So, follow appropriate procedures to _move_ the statefile resource configurations using one of below mentioned steps:
+    1. State move command: 
+    ```sh
+    terraform state mv <OLD_BLOCK_REFEERENCE> <NEW_REFERENCE>
+    ```
+    2. Use moved block:
+    ```hcl
+    moved {
+        from = aws_instance.something
+        to = aws_instance.myserver
+    }
+    ```
 
-### Useful tools
+### Useful Supporting tools
 
 1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
 2. Terrascan
