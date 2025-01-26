@@ -20,8 +20,8 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 ## Useful items:
 
 1. **State BACKUP**: 
-    - if stored locally, the `tfstate.backup` file contains the previous terraform apply results. 
-    - if storing in a remote backend, make sure to enable versioning to be able to roll back..
+    - If stored _**locally**_, the `tfstate.backup` file contains the previous terraform apply results. 
+    - if storing in a _**remote backend**_, make sure to enable versioning to be able to roll back..
 
 
 2. **[IMPORT Real-world resources](https://developer.hashicorp.com/terraform/language/import)**:
@@ -74,12 +74,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 
     <sub><sup>Source: Y. Brikman, "_Terraform Up and Running_," 3rd ed. O'Reilly Media, 2022, ch. 3.</sup></sub>
 
-7. **Module versioning**: If the modules are stored in a version control system, you can make use of specific versions of your code. In this scenario, it is recommended to use a separate git repository for modules. This is very helpful when you want to test the changes to your module in your test environmen without affecting the production environment. A sample code is as follows,
-    ```hcl
-        module "some_resource" {
-            source = "github.com/<owner_name>/<repo_name>//security/firewall?ref=v0.0.1" # Double slash after the git URL is important
-            # rest of the code...
-        }
+7. 
 
 ### Useful tools
 
@@ -87,3 +82,4 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 2. Terrascan
 3. Terratest
 4. Terraformer & Terracognita - To handle bulk import of existing resource configuration
+5. 
