@@ -1,3 +1,5 @@
+Vault - Terraform Secret Server deployment process and usage in code.
+
 Uses:
 - You can the Vault server to store important key-value pairs in a server and reference it as a backend in your configuration code.
 - As a good practice, regularly take snapshots of your vault.

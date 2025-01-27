@@ -1,4 +1,5 @@
-Recommendations:
+**Recommendations**:
+
 - One module - One function - One task - One lifecycle
 - Always do version pinning (mention a specific version)
 - Pass important module parameters as outputs to improve reusability

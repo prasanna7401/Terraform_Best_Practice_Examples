@@ -1,21 +1,5 @@
 # Learn Terraform
 
-## Topics:
-
-
-
-5. Terraform Cloud - Features and test config run screenshots. Contains `backend` code blocks
-6. [Sentinel](./6%20-%20sentinel%20policies/) - Policy as a code (ex. enfore tagging resources, restrict public storage accounts, etc.)
-7. [Packer](./7%20-%20packer/) - VM Image builder tool: can use config management tools like Shell, Ansible, Chef, etc. alongside. Also contains `lifecycle`, `terraform import` examples to build an apache http server
-8. Vault - Terraform Secret Server deployment process and usage in code.
-<details>
-<summary>Labs - Click here</summary>
-
-- [Auto-scaling Web server deployment fronted by Application Load Balancer](./9%20-%20lab/1%20-%20web%20server%20asg%20with%20elb/)
-- [Private EC2 Instance with a jump server and a NAT Gateway](./9%20-%20lab/2%20-%20ec2%20with%20jump%20server%20(nat%20gateway)/)
-
-</details>
-
 ## Useful items:
 
 1. **Statefile Backup**: 
