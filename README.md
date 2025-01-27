@@ -93,7 +93,7 @@ Contains terraform scripts used for learning the Terraform Associate exam.
 ### Useful Supporting tools
 
 1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
-2. Terrascan
-3. Terratest
-4. Terraformer & Terracognita - To handle bulk import of existing resource configuration
-5. 
+2. Terrascan - to scan for vulnerabilities.
+3. Terratest - To perform IaC code testing (unit, integration).
+4. Terraformer & Terracognita - To handle bulk import of existing resource configuration.
+5. tfenv - To manage terraform versions
