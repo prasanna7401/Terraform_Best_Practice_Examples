@@ -42,6 +42,14 @@ resource "kubernetes_deployment" "my-app" {
     selector {
       match_labels = local.pod_labels # Selects the pods to manage
     }
+
+    strategy {
+      type = "RollingUpdate"
+      rolling_update {
+        max_surge       = 1
+        max_unavailable = 1
+      }
+    }
   }
 
 
