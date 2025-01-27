@@ -1,5 +1,4 @@
 # Learn Terraform
-Contains terraform scripts used for learning the Terraform Associate exam.
 
 ## Topics:
 
