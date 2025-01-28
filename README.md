@@ -4,8 +4,9 @@
 
 1. **Statefile Backup**: 
     - If stored _**locally**_, the `tfstate.backup` file contains the previous terraform apply results. 
-    - if storing in a _**remote backend**_, make sure to enable versioning to be able to roll back..
-
+    - If storing in a _**remote backend**_, make sure to enable versioning to be able to roll back.
+    - If your _apply_ operation fails without saving the state file to the remote backend, terraform will save the file locally under the name `errored.tfstate`. You can set up appropriate steps to save this file from your pipeline or CI Server. Alternatively, you can push this state file to the remote backend by `terraform state push errored.tfstate`
+    - If your pipeline crashes during the process, the state file may remain locked. In this case, you can run `terraform force-unlock <LOCK_ID>`
 
 2. **[Import Real-world resources](https://developer.hashicorp.com/terraform/language/import)**:
   _2.1. How to import a resource configuration for managing via terraform_
@@ -17,19 +18,19 @@
     ```
     - Step-2: Run `terraform import <resource_type>.<resource_name> <resource_id>` (For example, aws_security_group.example sg-12345)
     - Step-3: After the configurations get imported into your state file, run `terraform show` or `terraform state show <resource_type>.<resource_name>`
-    - Step-4: Clean up the output-only attributes like `id`, `arn`, `timestamp`, etc. and add the code block the terraform configuration file.
+    - Step-4: Clean up the output-only attributes like `id`, `arn`, `timestamp`, etc., and add the code block to the terraform configuration file.
 
 > Other options: For bulk import of resources, you can use tools like `terraformer` & `terracognita`
 
 3. **Avoid Resource modification/deletion (useful for imported/critical resources)**:
-    - Option-1: Add a lifecycle block to your code:
+    - Option 1: Add a lifecycle block to your code:
         ```hcl
         lifecycle {
             ignore_changes = [cidr_block] # or any specific resource config
             prevent_destroy = true
         }
         ```
-    - Option-2: Manually remove the resource configuration from the state file.
+    - Option 2: Manually remove the resource configuration from the state file.
         ```sh
             terraform state rm aws_instance.example
         ```
@@ -60,7 +61,7 @@
     ```
 
 6. Instructions before refactoring existing code:
-    - Modifying the names of the existing resource/module block may trigger changes causing downtime. So, follow appropriate procedures to _move_ the statefile resource configurations using one of below mentioned steps:
+    - Modifying the names of the existing resource/module block may trigger changes causing downtime. So, follow appropriate procedures to _move_ the state file resource configurations using one of the below-mentioned steps:
     1. State move command: 
     ```sh
     terraform state mv <OLD_BLOCK_REFEERENCE> <NEW_REFERENCE>
@@ -81,3 +82,4 @@
 4. Terraformer & Terracognita - To handle bulk import of existing resource configuration.
 5. tfenv - To manage terraform versions
 6. tfsec & tflint - Enforce policies
+7. [Atlantis](https://www.runatlantis.io/) - Adds plan output automatically to the PR. Also capable of performing commit, plan, and apply operations.
