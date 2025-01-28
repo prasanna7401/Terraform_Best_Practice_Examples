@@ -80,3 +80,4 @@
 3. Terratest - To perform IaC code testing (unit, integration).
 4. Terraformer & Terracognita - To handle bulk import of existing resource configuration.
 5. tfenv - To manage terraform versions
+6. tfsec & tflint - Enforce policies
