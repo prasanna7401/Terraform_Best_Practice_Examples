@@ -6,3 +6,10 @@ Steps:
 
 1. Install dependencies using `packer init`
 2. Build image - `packer build`
+
+Packer code explanation:
+
+- `source{}` - Where & what kind of image to build
+- `build{}` - Reference to the source block configuration, and used to run any additional script using the following blocks,
+    - `provisioners{}`
+    - `post-provisioners{}`
