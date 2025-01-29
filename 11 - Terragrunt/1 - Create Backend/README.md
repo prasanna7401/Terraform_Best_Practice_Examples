@@ -1,6 +1,7 @@
 Reference links:
 1. [Generate Backend configuration file automatically](https://terragrunt.gruntwork.io/docs/features/state-backend/#generating-remote-state-settings-with-terragrunt)
 2. [Create Backend resources automatically](https://terragrunt.gruntwork.io/docs/features/state-backend/#create-remote-state-resources-automatically)
+3. [Terragrunt Reference Architecture](https://github.com/antonbabenko/terragrunt-reference-architecture)
 
 Steps:
 
