@@ -1,18 +1,31 @@
-```hcl
-abspath(path.root)
----
-"C:/Users/prasa/OneDrive/Desktop/DevOps/Terraform/Terrraform lab/Learn_Terraform/4 - builtin functions"
-```
+### More Function Types
+- Numeric functions
+- String functions
+- Collection functions
+- Encoding & Decoding functions
+- Filesystem functions
+- Datetime functions
+- Hashing & Crypto functions
+- IP Network functions
+- Type conversion functions
+- Random functions
 
-```hcl
-chomp(var.some_value)
----
-<<EOT
-Hello, World!
+**Absolute Path**
+  ```hcl
+  abspath(path.root)
+  ---
+  "C:/Users/prasa/OneDrive/Desktop/DevOps/Terraform/Terrraform lab/Learn_Terraform/4 - builtin functions"
+  ```
+**Chomp**: Trim newline character
+  ```hcl
+  chomp(var.some_value)
+  ---
+  <<EOT
+  Hello, World!
 
-EOT
-```
-
+  EOT
+  ```
+**Trim Space**: Trim extra spaces at start and end.
 ```hcl
 trimspace(var.some_value)
 ---

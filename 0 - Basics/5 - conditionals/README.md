@@ -4,7 +4,7 @@
 - **for** expressions
     ```hcl
     # SYNTAX - for <ITEM> in <LIST>: <OUTPUT>
-    user_name = [for user_info in users: use_info.name]
+    user_name = [for user_info in users: use_info.name if user_info!=""]
     ```
     - Use to loop over lists, maps, etc.
 - **for** string directive
