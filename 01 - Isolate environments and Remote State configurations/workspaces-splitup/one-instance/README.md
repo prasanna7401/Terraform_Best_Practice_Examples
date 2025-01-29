@@ -6,8 +6,8 @@
 - Local workspace state files are stored in `.terraform.tfstate.d` directory.
 - You can access the workspace details using string interpolation `${terraform.workspace}`
 
-- **Use different backends for different workspace**:
-    You can use different backend configurations for each workspace using partial configuration. For example,
+- **Use completely different backends for different workspace**:
+    Normally, when you change between workspaces, terraform will automatically change the linked statefile by a varying directory structure under the same backend. In case, if you want to use different backend configurations for each workspace using partial configuration, you can use the following:
 
     ```sh
     # Create and switch to the dev workspace
