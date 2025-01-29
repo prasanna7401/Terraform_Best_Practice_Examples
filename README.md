@@ -83,7 +83,7 @@
 
 7. **Force Re-creation of resource**: Use either -`-replace` flag with plan or apply step. For ex: `terraform apply -replace="aws_something.example"`
 
-8. **Troubleshooting**: Check `TF_LOG` environment variable output.
+8. **Troubleshooting**: Set `TF_LOG` to any debugging level (say, _DEBUG_) environment variable output. To store the logs in a persistant file, use `TF_LOG_PATH`, if not mentioned, you will see the debugging output in the terraform CLI.
 
 9. **Reference to another state file**:
 - Use case: Access outputs and resource attributes of another terraform deployment.
