@@ -106,9 +106,11 @@
     }
     ```
 
+
 ### Useful Supporting tools
 
 1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
+2. [Terragrunt](https://terragrunt.gruntwork.io/docs/features/state-backend/) - Very useful to keep the code DRY, and makes you write less lines of code!
 2. Terrascan - to scan for vulnerabilities.
 3. Terratest - To perform IaC code testing (unit, integration).
 4. Terraformer & Terracognita - To handle bulk import of existing resource configuration.
