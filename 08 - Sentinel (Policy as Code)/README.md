@@ -1,4 +1,4 @@
-[Sentinel](./6%20-%20sentinel%20policies/) - Policy as a code (ex. enfore tagging resources, restrict public storage accounts, etc.).
+[Sentinel](./6%20-%20sentinel%20policies/) - Policy as a code (ex. enfore tagging resources, restrict public storage accounts, etc.)
 
 This set up needs an upgraded plan to perform (teams or organization plan).
 
