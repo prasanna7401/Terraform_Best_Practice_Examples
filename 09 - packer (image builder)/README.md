@@ -9,7 +9,7 @@ Steps:
 
 Packer code explanation:
 
-- `source{}` - Where & what kind of image to build
+- `source{}` - Where & what kind of image to build.
 - `build{}` - Reference to the source block configuration, and used to run any additional script using the following blocks,
     - `provisioners{}`
     - `post-provisioners{}`

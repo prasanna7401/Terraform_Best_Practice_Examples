@@ -16,4 +16,4 @@ vault server -dev -dev-root-token-id="learning"
   or
   Using CLI, enter `vault kv put secret/aws hello=world`
 ![Sample secret in Vault](./Screenshots/1%20-%20Create%20secret.jpg)
-- Fetch secrets using cli by entering `vault kv get secret/aws`
+- Fetch secrets using cli by entering `vault kv get secret/aws`.
