@@ -118,3 +118,8 @@
 5. tfenv - To manage terraform versions
 6. tfsec & tflint - Enforce policies
 7. [Atlantis](https://www.runatlantis.io/) - Adds plan output automatically to the PR. Also capable of performing commit, plan, and apply operations.
+
+
+---
+
+Some parts of this repository contains the codes used for learning purposes from [Terraform: Up and Running](https://github.com/brikis98/terraform-up-and-running-code), originally authored by Yevgeniy Brikman and licensed under the MIT License.
