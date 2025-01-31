@@ -12,5 +12,5 @@ opa eval --data enforce_tagging.rego \
     --format pretty \
     data.terraform.allow
 ```
-> If output is `undefined`: Policy violation
-> If output is `true`: Adheres to policy
+- If output is `undefined`: Policy violation
+- If output is `true`: Adheres to policy
