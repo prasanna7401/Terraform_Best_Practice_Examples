@@ -28,8 +28,9 @@ lifecycle {
             # name = var.device_names[count.index]
         }
     ```
+    - Prefer using `for_each` instead of `count`. Because, if you try to individually modify a resource created by `count` (say, _n_), all the resources following this (_n+1_, _n+2_, ...) will get destroyed and recreated due to terraform trying to reorder them. This could cause downtime, or deletition of internal data of the resource.
 - **for_each**
-    -  Use to loop over resources, inline blocks within a resource, and modules.
+    - Use to loop over resources, inline blocks within a resource, and modules.
     - Use `each.key` and `each.value` to fetch values.
     - Supports only `sets` and `maps` when used on a resource.
     - Use for_each for an inline block in a resource. For example,
