@@ -108,16 +108,17 @@
     ```
 
 
-### Useful Supporting tools
+### Useful Supporting Tools
 
 1. [Gruntwork](https://docs.gruntwork.io/library/reference/) - Contains battle-tested codes for different use cases.
-2. [Terragrunt](https://terragrunt.gruntwork.io/docs/features/state-backend/) - Very useful to keep the code DRY, and makes you write less lines of code!
+2. [Terragrunt](https://terragrunt.gruntwork.io/docs/features/state-backend/) - Very useful to keep the code DRY, and makes you write fewer lines of code!
 2. Terrascan - to scan for vulnerabilities.
 3. Terratest - To perform IaC code testing (unit, integration).
 4. Terraformer & Terracognita - To handle bulk import of existing resource configuration.
 5. tfenv - To manage terraform versions
 6. tfsec & tflint - Enforce policies
 7. [Atlantis](https://www.runatlantis.io/) - Adds plan output automatically to the PR. Also capable of performing commit, plan, and apply operations.
+8. infra.new - Generate Terraform code, CI/CD workflows, cost estimation using AI
 
 
 ---
