@@ -1,0 +1,1 @@
+![Azure structure](../../../.github/screenshots/azure-repo-structure.png)
